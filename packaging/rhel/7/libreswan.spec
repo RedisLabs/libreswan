@@ -109,7 +109,7 @@ make %{?_smp_mflags} \
 %if 0%{with_development}
     USERCOMPILE="-g -DGCC_LINT %(echo %{optflags} | sed -e s/-O[0-9]*/ /) %{?efence} -fPIE -pie -fno-strict-aliasing -Wformat-nonliteral -Wformat-security" \
 %else
-    USERCOMPILE="-g -DGCC_LINT %{optflags} %{?efence} -fPIE -pie -fno-strict-aliasing -Wformat-nonliteral -Wformat-security" \
+    USERCOMPILE="-g -DGCC_LINT %{optflags} %{?efence} -fPIE -pie -fno-strict-aliasing -Wformat-nonliteral -Wformat-security -Wno-missing-field-initializers" \
 %endif
     USERLINK="-g -pie -Wl,-z,relro,-z,now %{?efence}" \
     %{libreswan_config} \
