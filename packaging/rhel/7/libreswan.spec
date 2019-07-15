@@ -29,7 +29,7 @@
 Name: libreswan
 Summary: Internet Key Exchange (IKEv1 and IKEv2) implementation for IPsec
 Version: 3.29
-Release: %{?prever:0.}1%{?prever:.%{prever}}%{?dist}
+Release: %{?prever:0.}1%{?prever:.%{prever}}.rl1%{?dist}
 License: GPLv2
 Url: https://libreswan.org/
 Source0: https://download.libreswan.org/%{?prever:development/}%{name}-%{version}%{?prever}.tar.gz
@@ -208,5 +208,7 @@ prelink -u %{_libexecdir}/ipsec/* 2>/dev/null || :
 %{_sysconfdir}/prelink.conf.d/libreswan-fips.conf
 
 %changelog
+* Mon Jul 15 2019 Redis Labs <info@redislabs.com> - 3.29-1.rl1
+- Fix opportunistic IPSec issues
 * Mon Jun 10 2019 Team Libreswan <team@libreswan.org> - 3.29-1
 - Automated build from release tar ball
